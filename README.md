@@ -19,3 +19,18 @@ follows the simplified workflow:
 ### Investigation
 - do the back merged changes track easily to the new repo?
 - is it easier to create a new monorepo?
+
+### Step 2. - create the release branch
+We are starting with the current project deps:
+```
+{:dependencies
+ {"monorepo/monorepo" #{},
+  "lib-b/lib-b" #{},
+  "deployable-b/deployable-b" #{"deployable-a/deployable-a"},
+  "lib-a/lib-a" #{},
+  "deployable-a/deployable-a" #{"lib-a/lib-a" "lib-b/lib-b"}},
+ :dependents
+ {"deployable-a/deployable-a" #{"deployable-b/deployable-b"},
+  "lib-a/lib-a" #{"deployable-a/deployable-a"},
+  "lib-b/lib-b" #{"deployable-a/deployable-a"}}}
+```
