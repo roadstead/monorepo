@@ -34,3 +34,8 @@ We are starting with the current project deps:
   "lib-a/lib-a" #{"deployable-a/deployable-a"},
   "lib-b/lib-b" #{"deployable-a/deployable-a"}}}
 ```
+
+To "release", we `lein mono set-versions` which sets the project
+versions of the sub-projects to that of the monorepo's project
+version. Then we `lein mono update-dependents-all` which will update the
+dependencies for each sub-project. Then we are ready for a commit.
