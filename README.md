@@ -47,5 +47,7 @@ production. From the release tag, create the `master` branch (or,
 later create a PR to be merged to master). Immediately tag, build, and
 release. 
 
-
-
+### Step 4. - backmerge master to develop
+Immediately after the master tag is created, the changes should be
+merged back to `develop`. Now we are ready for the next round of
+development.
