@@ -37,5 +37,15 @@ We are starting with the current project deps:
 
 To "release", we `lein mono set-versions` which sets the project
 versions of the sub-projects to that of the monorepo's project
-version. Then we `lein mono update-dependents-all` which will update the
-dependencies for each sub-project. Then we are ready for a commit.
+version. Then we `lein mono update-dependents-all` which will update
+the dependencies for each sub-project. Then we are ready for a tag on
+the release branch. This tag can be built and deployed for UAT.
+
+### Step 3. - create the master branch
+After UAT has accepted the release candidate, it is time to release to
+production. From the release tag, create the `master` branch (or,
+later create a PR to be merged to master). Immediately tag, build, and
+release. 
+
+
+
