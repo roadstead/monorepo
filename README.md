@@ -65,5 +65,11 @@ development, this backmerge should not change the project version -
 already a vesion higher.
 
 ### Step 5. - split out a sub-folder to become its own repository
-From the existing project folder, cd to a 
-
+Using: [Github doc: Splitting a subfolder out into a new repository](https://docs.github.com/en/github/getting-started-with-github/using-git/splitting-a-subfolder-out-into-a-new-repository).
+- `cd ..`
+- `git clone https://github.com/skm-ice/lein-mono.git monorepo-a`
+- `cd monorepo-a`
+- `git filter-branch --prune-empty --subdirectory-filter lib-a develop`
+- Create a new repo in github, in this case "monorep-a"
+- `git remote set-url origin https://github.com/roadstead/monorepo-a.git`
+- 
