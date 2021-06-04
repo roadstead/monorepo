@@ -1,4 +1,4 @@
-(defproject monorepo "0.2.0-18-2085df1"
+(defproject monorepo "0.2.1-SNAPSHOT"
   :plugins [[lein-mono "0.5.20"]]
   :aliases {
             "clean-all" ["mono" "do-all" "clean"]
