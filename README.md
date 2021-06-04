@@ -66,10 +66,22 @@ already a vesion higher.
 
 ### Step 5. - split out a sub-folder to become its own repository
 Using: [Github doc: Splitting a subfolder out into a new repository](https://docs.github.com/en/github/getting-started-with-github/using-git/splitting-a-subfolder-out-into-a-new-repository).
+Warning: [Not recommended by git docs](https://git-scm.com/docs/git-filter-branch#_warning)
 - `cd ..`
-- `git clone https://github.com/skm-ice/lein-mono.git monorepo-a`
-- `cd monorepo-a`
+- `git clone https://github.com/skm-ice/lein-mono.git lib-a`
+- `cd lib-a`
 - `git filter-branch --prune-empty --subdirectory-filter lib-a develop`
-- Create a new repo in github, in this case "monorep-a"
-- `git remote set-url origin https://github.com/roadstead/monorepo-a.git`
-- 
+- Create a new repo in github, in this case "monorepo-a"
+- `git remote set-url origin https://github.com/roadstead/lib-a.git`
+### Step 5. (alternate) - split out multiple sub-folders for a new monorepo
+Using: [git-filter-repo](https://github.com/newren/git-filter-repo/)
+- `python3 -m pip install --user git-filter-repo`
+- `git clone https://github.com/roadstead/monorepo.git monorepo-b`
+- `cd monorepo-b`
+- `git filter-repo --path lib-b/ --path deployable-b --path project.clj`
+- `git remote add origin https://github.com/roadstead/monorepo-b.git`
+- `git branch -M develop`
+- `git push -u origin develop`
+
+### Step 6. refactor
+There are now 3 repo's, all on `develop`, with SNAPSHOT versions. Let's create seperate versioning.
