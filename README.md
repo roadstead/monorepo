@@ -16,10 +16,6 @@ follows the simplified workflow:
 4. migrate a single lib to its own repo
 4. create a hotfix branch from `master`
 5. merge changes back to develop
-### Investigation
-- do the back merged changes track easily to the new repo?
-- is it easier to create a new monorepo?
-
 ### Step 2. - create the `release` branch
 We are starting with the current project deps:
 ```
@@ -46,6 +42,10 @@ project version. Finally, update the dependencies for each
 sub-project. Then we are ready to buils and deploy for UAT. The
 `release` branches project version should be bumped a minor increment
 and returned to SNAPSHOT.
+
+### Investigation
+- do the back merged changes track easily to the new repo?
+- is it easier to create a new monorepo?
 
 ### Step 3. - create the `master` branch
 After UAT has accepted the changes on the `release` branch, it is time
@@ -85,3 +85,8 @@ Using: [git-filter-repo](https://github.com/newren/git-filter-repo/)
 
 ### Step 6. refactor
 There are now 3 repo's, all on `develop`, with SNAPSHOT versions. Let's create seperate versioning.
+Create a new release version
+- `lein mono release-version`
+- `lein mono set-versions`
+- `lein mono update-dependents-all` 
+- `lein mono install-all`
