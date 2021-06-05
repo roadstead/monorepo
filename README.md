@@ -90,3 +90,4 @@ Create a new release version
 - `lein mono set-versions`
 - `lein mono update-dependents-all` 
 - `lein mono install-all`
+- foo
