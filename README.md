@@ -106,3 +106,9 @@ manual fix.
 The downside of this is that the changes to lib-a have now been added
 back into the cleaned up, and will have to be "killed". 
 
+Strategy to merge changes from master on `monorepo` to develop on `lib-a`:
+- `cd ./lib-a`
+- `git remote add monorepo ../monorepo`
+- `git remote update`
+- `git switch -c sync/0.1.0-10`
+- `git merge --allow-unrelated-histories monorepo/master`
