@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file. This change
 ### Changed
 - Add a new arity to `make-widget-async` to provide a different widget shape.
 
-## [0.1.1] - 2021-05-25
+## [0.1.0.10] - 2021-06-22
 ### Changed
-- Documentation on how to make the widgets.
+- hotfix for example
 
 ### Removed
 - `make-widget-sync` - we're all async, all the time.
@@ -20,5 +20,5 @@ All notable changes to this project will be documented in this file. This change
 - Files from the new template.
 - Widget maker public API - `make-widget-sync`.
 
-[Unreleased]: https://github.com/your-name/lib-a/compare/0.1.1...HEAD
-[0.1.1]: https://github.com/your-name/lib-a/compare/0.1.0...0.1.1
+[Unreleased]: https://github.com/roadstead/monorepo/lib-a/compare/0.1.0.9...HEAD
+[0.1.0]: https://github.com/roadstead/monorepo/lib-a/compare/0.1.0...0.1.0.9
