@@ -91,3 +91,18 @@ Create a new release version
 - `lein mono update-dependents-all` 
 - `lein mono install-all`
 - foo
+
+...
+
+### Step 7. hotfix master branch and backmerge
+Checkout the master branch, create hotfix, modify a project we have
+migrated out of the monorepo (lib-a) on a snapshot branch, merge this
+to master, create a release and publish to origin.
+
+Next, create a sync branch and merge master to develop. What occurs is
+that the final release of the lesser version is in conflict - requires
+manual fix.
+
+The downside of this is that the changes to lib-a have now been added
+back into the cleaned up, and will have to be "killed". 
+
