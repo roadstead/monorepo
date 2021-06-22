@@ -68,7 +68,7 @@ already a vesion higher.
 Using: [Github doc: Splitting a subfolder out into a new repository](https://docs.github.com/en/github/getting-started-with-github/using-git/splitting-a-subfolder-out-into-a-new-repository).
 Warning: [Not recommended by git docs](https://git-scm.com/docs/git-filter-branch#_warning)
 - `cd ..`
-- `git clone https://github.com/skm-ice/lein-mono.git lib-a`
+- `git clone https://github.com/roadstead/monorepo.git lib-a`
 - `cd lib-a`
 - `git filter-branch --prune-empty --subdirectory-filter lib-a develop`
 - Create a new repo in github, in this case "monorepo-a"
